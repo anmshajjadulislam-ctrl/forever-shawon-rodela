@@ -1,0 +1,920 @@
+/* ==========================================
+   FOREVER SHAWON & RODELA
+   PREMIUM ROMANTIC WEBSITE
+   CINEMATIC DARK PURPLE DESIGN
+========================================== */
+
+
+/* GOOGLE FONT FALLBACK */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #090611;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+
+/* ==========================================
+   COLOR VARIABLES
+========================================== */
+
+:root {
+    --dark: #090611;
+    --purple: #a855f7;
+    --pink: #ff72c6;
+    --light-pink: #ffc2e5;
+    --white: #ffffff;
+    --muted: #c5b7d9;
+    --glass: rgba(255, 255, 255, 0.055);
+}
+
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+.navbar {
+    width: 100%;
+    min-height: 75px;
+    padding: 15px 8%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(9, 6, 17, 0.82);
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--light-pink);
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #e8dff1;
+    font-size: 13px;
+    font-weight: 400;
+    transition: 0.4s;
+}
+
+.nav-links a:hover {
+    color: var(--pink);
+    text-shadow: 0 0 15px var(--pink);
+}
+
+
+/* ==========================================
+   HERO SECTION
+========================================== */
+
+.hero {
+    min-height: 100vh;
+    padding: 120px 20px 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 20% 30%, rgba(119, 40, 180, 0.25), transparent 35%),
+        radial-gradient(circle at 80% 70%, rgba(255, 70, 170, 0.17), transparent 35%),
+        linear-gradient(135deg, #090611, #190b2c, #10091e);
+
+    background-size: 200% 200%;
+    animation: dreamyBackground 15s ease infinite;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background: rgba(168, 85, 247, 0.12);
+    filter: blur(100px);
+    top: 10%;
+    left: -150px;
+    animation: glowMove 8s ease-in-out infinite alternate;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: rgba(255, 114, 198, 0.10);
+    filter: blur(100px);
+    bottom: -100px;
+    right: -100px;
+    animation: glowMove 9s ease-in-out infinite alternate-reverse;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    animation: magicalEntrance 1.8s ease both;
+}
+
+.hero-subtitle {
+    color: var(--pink);
+    font-size: 12px;
+    letter-spacing: 6px;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(45px, 8vw, 95px);
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 20px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #ffb6df,
+        #c69aff,
+        #ffffff
+    );
+
+    background-size: 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    animation: titleGlow 4s ease infinite alternate;
+}
+
+.hero h1 span {
+    color: var(--pink);
+}
+
+.hero h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(24px, 4vw, 38px);
+    color: #f5d7ed;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.hero-content > p:not(.hero-subtitle) {
+    color: #c9bbd7;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 35px;
+}
+
+
+/* ==========================================
+   MAIN BUTTON
+========================================== */
+
+.main-button {
+    display: inline-block;
+    padding: 15px 32px;
+
+    border-radius: 50px;
+    text-decoration: none;
+
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+
+    background: linear-gradient(
+        100deg,
+        #a855f7,
+        #ed65b9
+    );
+
+    box-shadow: 0 8px 30px rgba(168, 85, 247, 0.3);
+
+    transition: 0.4s;
+}
+
+.main-button:hover {
+    transform: translateY(-5px) scale(1.04);
+
+    box-shadow:
+        0 0 20px rgba(255, 105, 180, 0.6),
+        0 0 40px rgba(168, 85, 247, 0.4);
+}
+
+
+/* ==========================================
+   GENERAL SECTIONS
+========================================== */
+
+.intro,
+.memories,
+.letter,
+.distance-section {
+    padding: 110px 8%;
+    position: relative;
+}
+
+.intro {
+    background:
+        radial-gradient(circle at 90% 30%, rgba(168, 85, 247, 0.08), transparent 35%),
+        #0d0918;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 55px;
+}
+
+.section-subtitle {
+    color: var(--pink);
+    font-size: 11px;
+    letter-spacing: 5px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.section-heading h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(35px, 5vw, 55px);
+    font-weight: 600;
+    color: #fff0fb;
+    margin-bottom: 15px;
+    transition: 0.4s;
+}
+
+.section-heading h2:hover {
+    text-shadow: 0 0 25px rgba(255, 114, 198, 0.5);
+}
+
+.section-description {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   OUR STORY
+========================================== */
+
+.intro-content {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+
+    padding: 40px;
+    border-radius: 20px;
+
+    background: var(--glass);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+.intro-content p {
+    color: #d3c6df;
+    font-size: 14px;
+    line-height: 2.1;
+    margin-bottom: 18px;
+}
+
+.intro-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ==========================================
+   MEMORIES GALLERY
+========================================== */
+
+.memories {
+    background:
+        radial-gradient(circle at 10% 20%, rgba(255, 114, 198, 0.07), transparent 30%),
+        #090611;
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 1250px;
+    margin: auto;
+}
+
+.memory-card {
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 18px;
+    overflow: hidden;
+
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease,
+        border-color 0.5s ease;
+
+    transform-style: preserve-3d;
+}
+
+.memory-card:hover {
+    transform: translateY(-12px) scale(1.02);
+
+    border-color: rgba(255, 114, 198, 0.4);
+
+    box-shadow:
+        0 15px 40px rgba(168, 85, 247, 0.2),
+        0 0 25px rgba(255, 114, 198, 0.08);
+}
+
+.memory-photo {
+    display: block;
+    width: 100%;
+    height: 330px;
+
+    object-fit: cover;
+    cursor: pointer;
+
+    transition: transform 0.7s ease;
+}
+
+.memory-card:hover .memory-photo {
+    transform: scale(1.07);
+}
+
+.memory-info {
+    padding: 22px 20px 25px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    background: #130d20;
+}
+
+.memory-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: #ffc0e3;
+    margin-bottom: 10px;
+}
+
+.memory-info p {
+    font-size: 12px;
+    line-height: 1.9;
+    color: #c9bdd7;
+}
+
+
+/* ==========================================
+   PHOTO VIEWER
+========================================== */
+
+.photo-viewer {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.95);
+
+    z-index: 2000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.4s ease;
+}
+
+.photo-viewer.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.photo-viewer img {
+    max-width: 90%;
+    max-height: 85vh;
+
+    object-fit: contain;
+    border-radius: 12px;
+
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.3);
+
+    animation: photoZoom 0.5s ease;
+}
+
+.close-viewer {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+
+    color: white;
+    font-size: 45px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.close-viewer:hover {
+    color: var(--pink);
+    transform: rotate(90deg);
+}
+
+
+/* ==========================================
+   LOVE LETTER
+========================================== */
+
+.letter {
+    background:
+        radial-gradient(circle at 80% 50%, rgba(168, 85, 247, 0.1), transparent 40%),
+        #100a1c;
+}
+
+.letter-box {
+    max-width: 850px;
+    margin: auto;
+
+    padding: 50px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.07),
+        rgba(255, 255, 255, 0.025)
+    );
+
+    border: 1px solid rgba(255, 170, 220, 0.2);
+    border-radius: 20px;
+
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.25);
+
+    animation: letterFloat 6s ease-in-out infinite;
+}
+
+.letter-box p {
+    font-size: 14px;
+    color: #d7c9e2;
+    line-height: 2.2;
+    margin-bottom: 20px;
+}
+
+.letter-box .letter-greeting {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    color: var(--light-pink);
+    margin-bottom: 25px;
+}
+
+.letter-box .letter-ending {
+    margin-top: 35px;
+    color: #f4d9ee;
+}
+
+.letter-ending span {
+    display: inline-block;
+    margin-top: 10px;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--pink);
+}
+
+
+/* ==========================================
+   LONG DISTANCE SECTION
+========================================== */
+
+.distance-section {
+    text-align: center;
+
+    background:
+        radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.15), transparent 55%),
+        #090611;
+}
+
+.distance-section .section-heading {
+    margin-bottom: 30px;
+}
+
+.distance-section .section-heading h2 {
+    font-size: clamp(40px, 6vw, 65px);
+}
+
+.distance-section .section-heading h2 span {
+    color: var(--pink);
+}
+
+.distance-content {
+    max-width: 750px;
+    margin: auto;
+}
+
+.distance-content p {
+    color: #d3c5e0;
+    font-size: 14px;
+    line-height: 2;
+    margin-bottom: 15px;
+}
+
+.distance-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 29px;
+    color: var(--light-pink);
+    margin-top: 35px;
+
+    text-shadow: 0 0 20px rgba(255, 114, 198, 0.3);
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.footer {
+    text-align: center;
+    padding: 60px 20px 35px;
+
+    background: #07040d;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.footer h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 35px;
+    color: var(--light-pink);
+    margin-bottom: 15px;
+}
+
+.footer p {
+    color: #a99ab9;
+    font-size: 12px;
+    line-height: 2;
+}
+
+.footer .footer-quote {
+    color: var(--pink);
+    letter-spacing: 2px;
+    margin-top: 15px;
+}
+
+.footer .copyright {
+    margin-top: 30px;
+    font-size: 11px;
+    color: #74677f;
+}
+
+
+/* ==========================================
+   FLOATING HEARTS
+========================================== */
+
+.heart,
+.floating-heart {
+    position: fixed;
+    bottom: -30px;
+
+    color: #ff72c6;
+    font-size: 18px;
+
+    pointer-events: none;
+    z-index: 5;
+
+    animation: floatingHeart 7s linear forwards;
+
+    text-shadow: 0 0 12px rgba(255, 114, 198, 0.7);
+}
+
+@keyframes floatingHeart {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(0.6);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    80% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg) scale(1.3);
+        opacity: 0;
+    }
+}
+
+
+/* ==========================================
+   REVEAL ANIMATIONS
+========================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(45px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ==========================================
+   KEYFRAME ANIMATIONS
+========================================== */
+
+@keyframes magicalEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(45px);
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes dreamyBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes titleGlow {
+    0% {
+        background-position: 0%;
+        text-shadow: 0 0 10px rgba(255, 114, 198, 0.15);
+    }
+
+    100% {
+        background-position: 100%;
+        text-shadow: 0 0 25px rgba(168, 85, 247, 0.35);
+    }
+}
+
+@keyframes glowMove {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(50px, 30px) scale(1.2);
+    }
+}
+
+@keyframes letterFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes photoZoom {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* ==========================================
+   SCROLLBAR DESIGN
+========================================== */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #090611;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        #a855f7,
+        #ff72c6
+    );
+
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff72c6;
+}
+
+
+/* ==========================================
+   RESPONSIVE TABLET DESIGN
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .memory-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .intro,
+    .memories,
+    .letter,
+    .distance-section {
+        padding: 90px 5%;
+    }
+
+}
+
+
+/* ==========================================
+   RESPONSIVE MOBILE DESIGN
+========================================== */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        min-height: 65px;
+        padding: 12px 5%;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    .hero {
+        min-height: 90vh;
+    }
+
+    .hero-subtitle {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .hero-content > p:not(.hero-subtitle) {
+        font-size: 13px;
+    }
+
+    .main-button {
+        padding: 13px 25px;
+        font-size: 12px;
+    }
+
+    .intro,
+    .memories,
+    .letter,
+    .distance-section {
+        padding: 75px 6%;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+        font-size: 36px;
+    }
+
+    .memory-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .memory-photo {
+        height: 350px;
+    }
+
+    .memory-info {
+        padding: 20px 18px;
+    }
+
+    .intro-content {
+        padding: 25px 20px;
+    }
+
+    .letter-box {
+        padding: 28px 22px;
+        animation: none;
+    }
+
+    .letter-box .letter-greeting {
+        font-size: 27px;
+    }
+
+    .letter-box p {
+        font-size: 13px;
+    }
+
+    .distance-content h3 {
+        font-size: 24px;
+    }
+
+    .footer h2 {
+        font-size: 29px;
+    }
+
+    .photo-viewer {
+        padding: 15px;
+    }
+
+    .photo-viewer img {
+        max-width: 95%;
+        max-height: 80vh;
+    }
+
+    .close-viewer {
+        top: 15px;
+        right: 20px;
+        font-size: 38px;
+    }
+
+}
+
+
+/* ==========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
